@@ -1,0 +1,15 @@
+<div class="product">
+    <div class="product__container">
+        <h2 *ngIf="!isShow" class="product__title">{{product.title}} <span class="product__price">{{product.price | currency}}</span></h2>
+        <img [src]="product.image" class="product__image" [alt]="product.title">
+        <div *ngIf="isShow" class="product__info">
+            <div class="product__description">
+                <span class="product__id">
+                    {{product.id}}.
+                </span>
+                {{product.description}}
+            </div>
+        </div>
+        <button class="product__btn" (click)="isShow = !isShow">{{ isShow ? 'hide' : 'show'}} info</button>
+    </div>
+</div>
